@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>fromhyr.github.io</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="form-container">
+        <div class="form-row">
+            <label>
+                Kwota początkowa (zł)
+                <input type="text" id="amount" placeholder="np. 616000">
+            </label>
+        </div>
+        <div class="form-row">
+            <label>
+                Data początkowa
+                <span class="date-selects">
+                    <select id="from-year"></select>
+                    <select id="from-month"></select>
+                </span>
+            </label>
+            <label>
+                Data końcowa
+                <span class="date-selects">
+                    <select id="to-year"></select>
+                    <select id="to-month"></select>
+                </span>
+            </label>
+        </div>
+        <label class="checkbox-label">
+            <input type="checkbox" id="truncate" checked>
+            Odcinaj końcówki
+        </label>
+        <button id="generate-btn">Generuj</button>
+    </div>
+
+    <div id="error"></div>
+    <div id="result-container">
+        <button id="copy-btn">Kopiuj do schowka</button>
+        <div id="result"></div>
+    </div>
+
+    <a href="https://stat.gov.pl/obszary-tematyczne/ceny-handel/wskazniki-cen/wskazniki-cen-towarow-i-uslug-konsumpcyjnych-pot-inflacja-/miesieczne-wskazniki-cen-towarow-i-uslug-konsumpcyjnych-od-1982-roku/" target="_blank">Dane na stronie GUS</a>
+    <details id="accordion">
+        <summary>Miesięczne wskaźniki cen towarów i usług konsumpcyjnych od 1982 r.</summary>
+        <table id="inflation-table"></table>
+    </details>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
